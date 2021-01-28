@@ -1,0 +1,30 @@
+{% extends 'baseExc.html' %}
+
+{% block title %}Bank Account Management{%endblock%}
+
+{% block main %}
+<div class="page-wrapper">  
+
+	<center><h1>CREATE ACCOUNT</h1></center>
+
+
+	<form class="pure-form" action="{{ url_for('bank_acc') }}" method="POST">
+
+		<label>Customer Id <span style="color:red";> * </span></label>
+		<input type="text" name="cus_id" required = "required" pattern="[0-9]{9}"><br><br>
+		<label>Account type <span style="color:red";> * </span></label>
+		<select name="acc_type">
+			<option value="current">Current account</option>
+			<option value="savings">Savings account</option>
+		</select>
+		<br><br>
+	    <label>Deposit amount <span style="color:red";> * </span></label>
+	    <input type="text" name="dep_amt" required="required" pattern="[0-9]+">
+	    <br><br>
+	    <span style="color:red";> (*) fields are compulsary </span>
+	    <br>
+	    <button class="pure-button pure-button-primary" type="submit" name="submit">SUBMIT</button>
+	</form>
+
+</div>
+{% endblock %}

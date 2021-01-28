@@ -1,0 +1,50 @@
+{% extends 'baseExc.html' %}
+
+{% block title %}Bank Account Management{%endblock%}
+
+{% block main %}
+<div class="page-wrapper">  
+
+	<center>
+	<h1> Delete Account</h1>
+
+	<form class="pure-form pure-form-aligned" method="POST" action="/del_acc/{{items[0].customer_id}}">
+	
+          
+        <label for="aligned-name">Customer ID:  </label>
+        <input type="text" name="cus_id" value="{{ items[0].customer_id }}" readonly>
+   
+        <br><br>
+   
+   
+        <label for="aligned-name">Account ID: </label>
+
+     	<select id="idtext" name="acc_id" onchange="myFunction()">
+     		{% for i in items %}
+            <option value="{{ i.acc_type }}">{{ i.acc_id }}</option>
+        	{% endfor %}
+			
+		</select>
+
+		<br><br>	
+
+    	<label for="aligned-name">Account type: </label> 
+    	<label for="aligned-name" id="type"> {{ items[0].acc_type }} </label>
+
+    	<br><br>
+
+        <button type="submit" class="pure-button pure-button-primary">DELETE</a></button>
+        
+		
+	</form>
+	<br><br>
+	<form class="pure-form pure-form-aligned" method="GET" action="{{ url_for('search_acc')}}" >
+		<div>
+		<button type="submit" class="pure-button pure-button-primary">CANCEL</a></button>
+        
+		</div>
+	</form>
+
+	</center>
+</div>
+{% endblock %}

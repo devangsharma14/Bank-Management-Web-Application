@@ -1,0 +1,44 @@
+{% extends 'baseExc.html' %}
+
+{% block title %}Bank Account Management{%endblock%}
+
+{% block main %}
+<div class="page-wrapper"> 
+
+    <center><h1>Account Status</h1></center>
+
+    <form class="pure-form pure-form-aligned" method="GET" action="{{ url_for('acc_status')}}">
+    <table class="pure-table pure-table-horizontal">
+    <thead>
+        <tr>
+            
+            <th>Customer Id</th>
+            <th>Account Id</th>
+            <th>Account Type</th>
+            <th>Balance</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Refresh</th>
+        </tr>
+    </thead>
+    <tbody>
+    	{% for i in table %}
+        <tr>
+            
+            <td>{{i.customer_id}}</td>
+            <td>{{i.acc_id}}</td>
+            <td>{{i.acc_type}}</td>
+            <td>{{i.balance}}</td>
+            <td>{{i.stat}}</td>
+            <td>{{i.date}}</td>
+            <td><a href="{{ url_for('acc_status')}} ">Refresh</a></td>
+        </tr>
+       {% endfor %}
+    </tbody>
+    </table>
+
+ 	<center><button type="submit" class="pure-button pure-button-primary">Refresh List</button></center>
+    </form>	
+
+</div>
+{% endblock %}
