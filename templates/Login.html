@@ -1,0 +1,81 @@
+
+<head>
+	<title>Bank Login</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='base.css') }}">
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="{{ url_for('home')}}">Bank</a>
+	    </div>
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+
+	{% for message in get_flashed_messages() %}
+	<h2>{{ message }}</h2>
+	{% endfor %}
+	<div class="page-wrapper">
+		<h1>Login</h1>
+
+		<form action="{{ url_for('login') }}" method="POST">
+			<div class="form-group">
+				<label for="uname">Username</label>
+				<input type="text" id="uname" name="username" required>
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password" required>
+			</div>
+				<input type="submit" name="submit" class="btn btn-default" value="submit">
+		</form>
+		<a href="{{ url_for('signup') }}">Create account</a>
+	</div>
+
+
+	<div class="footer">
+		<div class="footer-content">
+			<div class="footer-section about">
+				<h1 class="sec-head">About Us</h1>
+				<p>Bank was founded in 14th June 2016 with the objective of providing with detail services based on Banking operations. It offers a plethora of products and service, to cater to customer by providing certain animus services with an easy volving offersand ways to do the required job.</p>
+			</div>
+			<div class="footer-section services">
+				<h1 class="sec-head">Services</h1>
+				<p>Retail and Consumer Banking</p>
+				<p>Personal Internet Banking</p>
+				<p>Corporate Internet Banking</p>
+				<p>Debit and Credit Cards</p>
+			</div>
+			<div class="footer-section contact">
+				<h1 class="sec-head">Contact Us</h1>
+				<p>Email: customer.service@bank.com</p>
+				<p>Contact No: 022-42406778, 022-54567890</p>
+				<p>Address: Corporate Office, Madame Cama Road,</p>
+				<p>Nariman Point, Mumbai, Maharashtra 400021</p>
+				<div class="socials">
+					<a href="#"><i class="fab fa-facebook"></i></a>
+					<a href="#"><i class="fab fa-instagram"></i></a>
+					<a href="#"><i class="fab fa-twitter"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			&copy; Bank
+		</div>
+	</div>
+
+</body>

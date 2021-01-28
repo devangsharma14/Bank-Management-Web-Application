@@ -1,0 +1,58 @@
+{% extends 'baseExc.html' %}
+
+{% block title %}Bank Customer Management{%endblock%}
+
+{% block main %}
+<div class="page-wrapper"> 
+	 <form class="pure-form pure-form-aligned" method="GET" action="/cstatus">
+        <fieldset>
+           <div class="pure-control-group">
+                <label for="aligned-name"> Customer SSN ID </label>
+                {%if customerssnid %}
+                    <label for="aligned-name"> {{customerssnid}} </label>
+                {%endif%}
+            </div>
+            <div class="pure-control-group">
+                <label for="aligned-name"> Customer ID </label>
+                {%if customer_id %}
+                    <label for="aligned-name"> {{customer_id}} </label>
+                {%endif%}
+            </div>
+            <div class="pure-control-group">
+                <label for="aligned-name"> Customer Name</label>
+                {%if customername %}
+                    <label for="aligned-name"> {{customername}} </label>
+                {%endif%}
+            </div>
+            <div class="pure-control-group">
+                <label for="aligned-name"> Age</label>
+                {%if age %}
+                    <label for="aligned-name"> {{age}} </label>
+                {%endif%}
+            </div>
+            <div class="pure-control-group">
+                <label for="aligned-name">Address</label>
+                {%if address %}
+                    <label for="aligned-name"> {{address}} </label>
+                {%endif%}
+            </div>
+            <div class="pure-control-group">
+                <label for="aligned-name">State</label>
+                {%if state %}
+                    <label for="aligned-name"> {{state}} </label>
+                {%endif%}
+            </div>
+            <div class="pure-control-group">
+                <label for="aligned-name">City</label>
+                {%if city %}
+                    <label for="aligned-name"> {{city}} </label>
+                {%endif%}
+            </div>
+            <div class="pure-controls">    
+                <button type="submit" class="pure-button pure-button-primary">Back</button>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+{% endblock %}

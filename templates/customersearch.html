@@ -1,0 +1,28 @@
+{% extends 'baseExc.html' %}
+
+{% block title %}Bank Customer Management{%endblock%}
+
+{% block main %}
+<div class="page-wrapper">  
+	<h3>Search Customer</h3>
+	<form class="pure-form pure-form-aligned" method="POST" action="/customersearch">
+        <fieldset>
+            <div class="pure-control-group">
+                <label for="aligned-name"> Customer SSN ID </label>
+                <input type="text" name="customerssnid" placeholder="Customer SSN ID"/>
+            </div>
+            <div class="pure-control-group">
+                <label for="aligned-name">OR</label>
+            </div>
+            <div class="pure-control-group">
+                <label for="aligned-name"> Customer ID </label>
+                <input type="text" name="customer_id" placeholder="Customer ID" />
+            </div>
+            <div class="pure-controls">    
+                <button type="submit" class="pure-button pure-button-primary">Search</button>
+           
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}
