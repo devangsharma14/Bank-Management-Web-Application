@@ -1,5 +1,5 @@
 # Bank-Management-Web-Application
-Flask based Bank Management Website. Illustrate basic CRUD operations using Flask
+Flask based Bank Management Website. Illustrate basic CRUD operations using Flask.
 
 ## Description
 This project is a part of Tata Consultancy Service Xplore Training Program.
