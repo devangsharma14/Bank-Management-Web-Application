@@ -5,7 +5,7 @@ Flask based Bank Management Website. Illustrate basic CRUD operations using Flas
 This project is a part of Tata Consultancy Service Xplore Training Program.
 For detailed requirement specification refer documents in the Assests Folder.<br/>
 ### Database 
-Database Schema is specifed in [THIS](assets/Database-Script.pdf) document
+Database Schema is specifed in [THIS](assets/Database%20Script.pdf) document
 
 ## Dependencies
 * Flask
