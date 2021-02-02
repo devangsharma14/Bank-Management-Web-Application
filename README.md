@@ -10,4 +10,3 @@ Database Schema is specifed in [THIS](assets/Database%20Script.pdf) document
 ## Dependencies
 * Flask
 * sqlite3
-assets/Database Script.pdf
